@@ -20,4 +20,20 @@ class NotasController extends Controller
             'note' => $note, //envia a variavel note para a view
         ]);
     }
+
+    public function criar(){
+        return view('notas/criar');
+    }
+
+    public function inserir(Request $formulario){
+        $dados = $formulario->validade([
+            'titulo' => 'required|max:50',
+            'nivel' => 'required',
+            'conteudo' => 'required',
+
+        ]);
+
+        Nota::create($dados);
+        return redirect()->route('notas');
+    }
 }

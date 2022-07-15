@@ -6,7 +6,7 @@
 
     <h1>Nota - Criar</h1>
 
-    @if($errors->any())
+    {{-- @if($errors->any())
         <p>Preencha os campos corretamente</p>
 
         <ul>
@@ -16,7 +16,7 @@
             @endforeach
         </ul>
         
-    @endif
+    @endif --}}
 
     <form action="{{ route('notas/inserir')}}" method="post">
         @csrf
@@ -25,6 +25,11 @@
         <p><input type="text" value="{{ old('nivel') }}" name="nivel" placeholder="Nivel">
         {{-- <select name="nivel" id="titulo"  --}}
 
-        <p><textarea id="summernote" type="text" value="{{ old(conteudo) }}" name="conteudo"></textarea></p>
+        <p><textarea id="summernote" type="text" value="{{ old('conteudo') }}" name="conteudo" cols="50" rows="10"></textarea></p>
         {{-- fazer download https://summernote.org/getting-started/ --}}
+
+        <p><input type="submit" value="Criar"></p>
+    </form>
+
+@endsection
 

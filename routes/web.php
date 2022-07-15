@@ -24,4 +24,6 @@ Route::get('notas/ver/{note}', [NotasController::class, 'ver'])-> name('notas/ve
 
 Route::get('/notas/criar', [NotasController::class,'criar'])->name('notas/criar');
 
+Route::post('/notas/criar', [NotasController::class,'inserir'])->name('notas/inserir');
+
 // Route::get('/', [NotasController::class, 'login'])->name('login');

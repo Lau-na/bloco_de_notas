@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(NotaSeeder::class);
         $this->call(UsuarioSeeder::class);
+        $this->call(NivelSeeder::class); //criar coisas de Nivel
+        
     }
 
     // public function run()
