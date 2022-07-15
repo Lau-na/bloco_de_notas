@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('notas', function (Blueprint $table) {
+        Schema::create('niveis', function (Blueprint $table) {
             $table->id();
-            $table->integer('nivel_id')->deafoult(0); //tirar o defoult depois
-            $table->string('titulo');
             $table->string('nivel');
-            $table->text('conteudo');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notas');
+        Schema::dropIfExists('niveis');
     }
 };

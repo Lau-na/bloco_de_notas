@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NotasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 //     return view('layout');
 // });
 
-Route::get('/', function () {
-    return view('notas/notas');
-});
+Route::get('/notas', [NotasController::class, 'index'])->name('index');
+
+Route::get('notas/ver/{note}', [NotasController::class, 'ver'])-> name('notas/ver'); //criei variel note para ser recebida pela controller
+
+Route::get('/notas/criar', [NotasController::class,'criar'])->name('notas/criar');
+
+// Route::get('/', [NotasController::class, 'login'])->name('login');
