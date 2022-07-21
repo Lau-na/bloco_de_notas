@@ -11,7 +11,11 @@ class Nota extends Model
 
     protected $fillable = [
         'titulo',
-        'nivel',
+        'nivel_id',
         'conteudo'
     ];
+
+    public function nivel(){
+        return $this->belongsTo(Nivel::class);
+    }
 }

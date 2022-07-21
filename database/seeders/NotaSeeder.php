@@ -17,19 +17,19 @@ class NotaSeeder extends Seeder
     {
         DB::table('notas')->insert([
             'titulo' => 'Primeira Nota',
-            'nivel_id' => '1',
+            'nivel_id' => 1,
             'conteudo' => 'Não sei o que espalhar nessa primeira nota :)',
         ]);
 
         DB::table('notas')->insert([
             'titulo' => 'Segunda Nota',
-            'nivel_id' => '2',
+            'nivel_id' => 2,
             'conteudo' => 'Não sei o que espalhar nessa segunda nota :)',
         ]);
 
         DB::table('notas')->insert([
             'titulo' => 'Terceira Nota',
-            'nivel_id' => '3',
+            'nivel_id' => 3,
             'conteudo' => 'Não sei o que espalhar nessa terceira nota :)',
         ]);
     }

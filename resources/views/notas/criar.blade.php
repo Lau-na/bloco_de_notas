@@ -22,17 +22,16 @@
         @csrf
         <p><input type="text" value="{{ old('titulo') }}" name="titulo" placeholder="Titulo"></p>
 
-        {{-- <p>
+        <p>
             <select name="nivel_id">
-            <option>Teste né</option>
-            {{-- @foreach($categs as $cat)
-                <option value="{{$cat->id}}">{{$cat->nome}}</option>
-            @endforeach 
+                <option>Teste</option>
+                @foreach($nivs as $niv)
+                    <option value="{{$niv->id}}">{{$niv->nome}}</option>
+                @endforeach 
             </select>
-        </p> --}}
+        </p>
 
-        <p><input type="text" value="{{ old('nivel') }}" name="nivel" placeholder="Nivel">
-        {{-- <select name="nivel" id="titulo"  --}}
+        {{-- <p><input type="text" value="{{ old('nivel') }}" name="nivel" placeholder="Nivel"> --}}
 
         <p><textarea id="summernote" type="text" value="{{ old('conteudo') }}" name="conteudo" cols="50" rows="10"></textarea></p>
         {{-- fazer download https://summernote.org/getting-started/ --}}

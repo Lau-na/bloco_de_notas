@@ -14,11 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('layout');
-// });
 
-Route::get('/notas', [NotasController::class, 'index'])->name('index');
+Route::get('/', [NotasController::class, 'index']);
+
+Route::get('/notas', [NotasController::class, 'index'])->name('notas');
 
 Route::get('notas/ver/{note}', [NotasController::class, 'ver'])-> name('notas/ver'); //criei variel note para ser recebida pela controller
 

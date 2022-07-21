@@ -16,18 +16,15 @@ class NivelSeeder extends Seeder
     public function run()
     {
         DB::table('niveis')->insert([
-            'id' => '1',
-            'nivel' => 'Prioridade alta',
+            'nome' => 'Prioridade alta',
         ]);
 
         DB::table('niveis')->insert([
-            'id' => '2',
-            'nivel' => 'Prioridade média',
+            'nome' => 'Prioridade média',
         ]);
 
         DB::table('niveis')->insert([
-            'id' => '3',
-            'nivel' => 'Prioridade baixa',
+            'nome' => 'Prioridade baixa',
         ]);
     }
 }

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('niveis', function (Blueprint $table) {
             $table->id();
-            $table->string('nivel');
+            $table->string('nome');
             $table->timestamps();
         });
     }

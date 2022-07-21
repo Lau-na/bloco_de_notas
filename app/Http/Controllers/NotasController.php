@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Nivel;
 use App\Models\Nota;
 use Illuminate\Http\Request;
 
 class NotasController extends Controller
 {
     public function index() {
-        $notas = Nota::all();
+        $notas = Nota::with('nivel')->get();
         return view('notas/index', [
             'notes' => $notas,
         ]);
@@ -22,13 +23,16 @@ class NotasController extends Controller
     }
 
     public function criar(){
-        return view('notas/criar');
+        $niveis = Nivel::all();
+        return view('notas/criar', [
+            "nivs" => $niveis,
+        ]);
     }
 
     public function inserir(Request $formulario){
         $dados = $formulario->validate([
             'titulo' => 'required|max:50',
-            'nivel' => '',
+            'nivel_id' => 'required',
             'conteudo' => 'required',
 
         ]);
