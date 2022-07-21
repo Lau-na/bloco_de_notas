@@ -26,9 +26,9 @@ class NotasController extends Controller
     }
 
     public function inserir(Request $formulario){
-        $dados = $formulario->validade([
+        $dados = $formulario->validate([
             'titulo' => 'required|max:50',
-            'nivel' => 'required',
+            'nivel' => '',
             'conteudo' => 'required',
 
         ]);

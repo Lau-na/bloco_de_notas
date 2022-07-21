@@ -15,9 +15,8 @@ return new class extends Migration
     {
         Schema::create('notas', function (Blueprint $table) {
             $table->id();
-            $table->integer('nivel_id')->deafoult(0); //tirar o defoult depois
             $table->string('titulo');
-            $table->string('nivel');
+            $table->integer('nivel_id'); //->deafoult(0); //tirar o defoult depois
             $table->text('conteudo');
             $table->timestamps();
         });

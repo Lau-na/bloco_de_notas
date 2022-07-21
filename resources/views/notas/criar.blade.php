@@ -22,6 +22,15 @@
         @csrf
         <p><input type="text" value="{{ old('titulo') }}" name="titulo" placeholder="Titulo"></p>
 
+        {{-- <p>
+            <select name="nivel_id">
+            <option>Teste né</option>
+            {{-- @foreach($categs as $cat)
+                <option value="{{$cat->id}}">{{$cat->nome}}</option>
+            @endforeach 
+            </select>
+        </p> --}}
+
         <p><input type="text" value="{{ old('nivel') }}" name="nivel" placeholder="Nivel">
         {{-- <select name="nivel" id="titulo"  --}}
 
