@@ -7,7 +7,7 @@
      <div>
         <p><a href="{{ route('notas/criar')}}" class="btn btn-primary" >+ Nova</a></p>  
     </div>
-        
+
     <div>
         <table border="1">
             <tr>
@@ -25,6 +25,10 @@
                     </td>
                     <td>
                        {{$note->conteudo}}
+                    </td>
+
+                    <td>
+                        <a href="{{route('notas/editar', $note->id)}}">Editar</a>
                     </td>
                 </tr>
             @endforeach

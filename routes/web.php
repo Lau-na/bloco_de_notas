@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [NotasController::class, 'index']);
 
+Route::get('/notas/summernote', [NotasController::class, 'summernote']);
+
 Route::get('/notas', [NotasController::class, 'index'])->name('notas');
 
 Route::get('notas/ver/{note}', [NotasController::class, 'ver'])-> name('notas/ver'); //criei variel note para ser recebida pela controller
@@ -24,5 +26,8 @@ Route::get('notas/ver/{note}', [NotasController::class, 'ver'])-> name('notas/ve
 Route::get('/notas/criar', [NotasController::class,'criar'])->name('notas/criar');
 
 Route::post('/notas/criar', [NotasController::class,'inserir'])->name('notas/inserir');
+
+Route::get('/notas/editar/{note}', [NotasController::class, 'editar'])->name('notas/editar');
+Route::put('/notas/editar/{note}', [NotasController::class, 'editarGravar']);
 
 // Route::get('/', [NotasController::class, 'login'])->name('login');

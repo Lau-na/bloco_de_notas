@@ -15,6 +15,10 @@ class NotasController extends Controller
         ]);
     }
 
+    public function summernote(){
+        return view('notas/summernote');
+    }
+
     public function ver(Nota $note) {  //variavel note recebida da rota
         // return $note; retorna objeto de id 1
         return view('notas/ver', [
@@ -23,9 +27,9 @@ class NotasController extends Controller
     }
 
     public function criar(){
-        $niveis = Nivel::all();
+        $niveis = Nivel::all(); //consulta no db 
         return view('notas/criar', [
-            "nivs" => $niveis,
+            "nivs" => $niveis, //passa consulta para view
         ]);
     }
 
@@ -38,6 +42,26 @@ class NotasController extends Controller
         ]);
 
         Nota::create($dados);
+        return redirect()->route('notas');
+    }
+
+    public function editar(Nota $note){
+        $niveis = Nivel::all();
+        return view('notas/editar', ['note' => $note, 'nivs' => $niveis]);
+    }
+
+
+    public function editarGravar(Request $formulario, Nota $note){
+
+        $dados = $formulario->validate([
+            'titulo' => 'required|max:50',
+            'nivel_id' => 'required',
+            'conteudo' => 'required',
+        ]);
+
+        $note->fill($dados);
+        $note->save();
+
         return redirect()->route('notas');
     }
 }
