@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\NotasController;
+use App\Http\Controllers\PDFController;
 use App\Http\Controllers\UsuariosController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,4 +37,6 @@ Route::get('/login', [UsuariosController::class, 'index'])->name('usuario/index'
 Route::post('/login', [UsuariosController::class, 'login'])->name('usuario/login');
 
 Route::get('/logout', [UsuariosController::class, 'logout'])->name('usuario/logout');
+
+Route::get('pdf', [PDFController::class, 'geraPDF']);
 

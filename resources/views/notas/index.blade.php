@@ -2,6 +2,8 @@
 @section('titulo', 'Index de notas')
 @section('corpo') 
 
+{{-- composer require barryvdh/laravel-dompdf --}}
+
     <h1>Index de Notas</h1>
 
      <div>

@@ -41,6 +41,22 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+
+
+/*
+|--------------------------------------------------------------------------
+| DomPDF
+|--------------------------------------------------------------------------
+|
+| Next, we need to bind some important interfaces into the container so
+| we will be able to resolve them when needed. The kernels serve the
+| incoming requests to this application from both the web and CLI.
+|
+*/
+
+// $app->register(\Barryvdh\DomPDF\ServiceProvider::class);
+// $app->configure('dompdf');
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application
