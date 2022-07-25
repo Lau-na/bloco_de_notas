@@ -24,11 +24,20 @@
                         {{$note->nivel->nome}}
                     </td>
                     <td>
-                       {{$note->conteudo}}
+                       {!!$note->conteudo!!}
                     </td>
 
                     <td>
-                        <a href="{{route('notas/editar', $note->id)}}">Editar</a>
+                        <a href="{{route('notas/editar', $note->id)}}" class="btn btn-info edit-btn">Editar</a>
+                    </td>
+
+                    <td>
+                        <form action="/notas/{{$note->id}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger delete-btn">Deletar</button>
+                        
+                        </form>
                     </td>
                 </tr>
             @endforeach

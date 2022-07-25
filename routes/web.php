@@ -30,7 +30,10 @@ Route::post('/notas/criar', [NotasController::class,'inserir'])->name('notas/ins
 Route::get('/notas/editar/{note}', [NotasController::class, 'editar'])->name('notas/editar');
 Route::put('/notas/editar/{note}', [NotasController::class, 'editarGravar']);
 
+Route::delete('/notas/{note}', [NotasController::class], 'deletar')->name('notas/deletar');
+
 Route::get('/login', [UsuariosController::class, 'index'])->name('usuario/index');
 Route::post('/login', [UsuariosController::class, 'login'])->name('usuario/login');
 
 Route::get('/logout', [UsuariosController::class, 'logout'])->name('usuario/logout');
+

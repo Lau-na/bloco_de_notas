@@ -15,10 +15,6 @@ class NotasController extends Controller
         ]);
     }
 
-    public function summernote(){
-        return view('notas/summernote');
-    }
-
     public function ver(Nota $note) {  //variavel note recebida da rota
         // return $note; retorna objeto de id 1
         return view('notas/ver', [
@@ -63,5 +59,10 @@ class NotasController extends Controller
         $note->save();
 
         return redirect()->route('notas');
+    }
+
+    public function deletar(Nota $note){
+        Nota::findOrfail($note)->delete();
+        return redirect()->route('notas'); //->with('msg', 'Nota excluída com sucesso.')
     }
 }

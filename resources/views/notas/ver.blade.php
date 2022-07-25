@@ -4,10 +4,10 @@
     
     <h1>Notas - Ver</h1>
 
-    <h2>Titulo - {{$note->titulo}}</h2>
+    <h2>{{$note->titulo}}</h2>
 
-    <p>Nivel de importância: {{$note->nivel}}</p>
+    <p>{{$note->nivel}}</p>
 
-    <p>Conteudo: {{$note->conteudo}}</p>
+    <p>{!!$note->conteudo!!}</p>
 
 @endsection
