@@ -1,7 +1,5 @@
 @extends('layout')
-
-@section('titulo', 'Noova nota')
-
+@section('titulo', 'Editar nota')
 @section('corpo')
 
     <h1>Nota - Editar</h1>
@@ -37,7 +35,6 @@
         </p>
 
         <p><textarea id="summernote" name="conteudo" cols="50" rows="10">{{ old('conteudo') ?: $note->conteudo }}</textarea></p>
-        {{-- fazer download https://summernote.org/getting-started/ --}}
 
         <p><input type="submit" value="Gravar"></p>
     </form>

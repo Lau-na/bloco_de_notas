@@ -1,11 +1,11 @@
 @extends('layout')
-
+@section('titulo', 'Index de notas')
 @section('corpo') 
 
     <h1>Index de Notas</h1>
 
      <div>
-        <p><a href="{{ route('notas/criar')}}" class="btn btn-primary" >+ Nova</a></p>  
+        <p><a href="{{ route('notas/criar')}}" class="btn btn-primary" >+ Nota</a></p>  
     </div>
 
     <div>

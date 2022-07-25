@@ -15,16 +15,16 @@ class UsuarioSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'name' => 'Luane',
+        DB::table('usuarios')->insert([
+            'nome' => 'Luane',
             'email' => 'luane@gmail.com',
-            'password' => '123'
+            'senha' => '123'
         ]);
 
-        DB::table('users')->insert([
-            'name' => 'Lopes',
+        DB::table('usuarios')->insert([
+            'nome' => 'Lopes',
             'email' => 'lopes@gmail.com',
-            'password' => '123'
+            'senha' => '123'
         ]);
     }
 }

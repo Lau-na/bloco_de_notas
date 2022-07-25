@@ -1,5 +1,4 @@
 @extends('layout')
-    
 @section('titulo', 'Ver Nota')
 @section('corpo')
     
