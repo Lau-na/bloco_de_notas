@@ -62,7 +62,7 @@ class NotasController extends Controller
     }
 
     public function deletar(Nota $note){
-        Nota::findOrfail($note)->delete();
+        $note->delete();
         return redirect()->route('notas'); //->with('msg', 'Nota excluída com sucesso.')
     }
 }

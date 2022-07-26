@@ -6,7 +6,7 @@
 
     <h2>{{$note->titulo}}</h2>
 
-    <p>{{$note->nivel}}</p>
+    <p>{{$note->nivel->nome}}</p>
 
     <p>{!!$note->conteudo!!}</p>
 

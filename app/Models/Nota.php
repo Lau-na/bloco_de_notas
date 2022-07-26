@@ -11,6 +11,7 @@ class Nota extends Model
 
     protected $fillable = [
         'titulo',
+        'usuario_id',
         'nivel_id',
         'conteudo'
     ];

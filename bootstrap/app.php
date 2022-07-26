@@ -54,8 +54,6 @@ $app->singleton(
 |
 */
 
-// $app->register(\Barryvdh\DomPDF\ServiceProvider::class);
-// $app->configure('dompdf');
 
 /*
 |--------------------------------------------------------------------------

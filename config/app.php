@@ -195,9 +195,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        // DomPDF
-        BarryvdhDomPDFServiceProvider::class,
-
     ],
 
     /*
@@ -215,7 +212,6 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
-    // DomPDF
-    'PDF' => BarryvdhDomPDFFacade::class,
+    
 
 ];

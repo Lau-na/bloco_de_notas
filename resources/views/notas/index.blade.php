@@ -2,8 +2,6 @@
 @section('titulo', 'Index de notas')
 @section('corpo') 
 
-{{-- composer require barryvdh/laravel-dompdf --}}
-
     <h1>Index de Notas</h1>
 
      <div>
@@ -30,14 +28,18 @@
                     </td>
 
                     <td>
+                        <a href="{{route('notas/pdf', $note->id)}}" class="btn btn-info edit-btn">PDF</a>
+                    </td>
+
+                    <td>
                         <a href="{{route('notas/editar', $note->id)}}" class="btn btn-info edit-btn">Editar</a>
                     </td>
 
                     <td>
-                        <form action="/notas/{{$note->id}}" method="post">
+                        <form action="{{route('notas/deletar', $note->id)}}" method="post">
                             @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger delete-btn">Deletar</button>
+                            @method('delete')
+                            <button type="hidden" name="id" value="{$nota->id}" class="btn btn-danger delete-btn">Deletar</button>
                         
                         </form>
                     </td>
