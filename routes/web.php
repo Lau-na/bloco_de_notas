@@ -40,20 +40,6 @@ Route::post('/login', [UsuariosController::class, 'login'])->name('usuario/login
 
 Route::get('/logout', [UsuariosController::class, 'logout'])->name('usuario/logout');
 
-// Route::get('pdf', [PDFController::class, 'geraPDF']);
+// Route::get('notas/pdf/{note}', [PDFController::class, 'geraPDF']);
+Route::get('notas/pdf', [PDFController::class, 'geraPDF']);
 
-Route::get('/notas/pdf/{note}', function () {
-
-    // instantiate and use the dompdf class
-    $dompdf = new Dompdf();
-    $dompdf->loadHtml(view('notas/pdf'));
-
-    // (Optional) Setup the paper size and orientation
-    $dompdf->setPaper('A4');
-
-    // Render the HTML as PDF
-    $dompdf->render();
-
-    // Output the generated PDF to Browser
-    $dompdf->stream('nota.pdf', ['Attachment'=>false]);
-})->name('notas/pdf');

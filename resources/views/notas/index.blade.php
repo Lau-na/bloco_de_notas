@@ -27,9 +27,9 @@
                        {!!$note->conteudo!!}
                     </td>
 
-                    <td>
+                    {{-- <td>
                         <a href="{{route('notas/pdf', $note->id)}}" class="btn btn-info edit-btn">PDF</a>
-                    </td>
+                    </td> --}}
 
                     <td>
                         <a href="{{route('notas/editar', $note->id)}}" class="btn btn-info edit-btn">Editar</a>
