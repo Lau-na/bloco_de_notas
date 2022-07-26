@@ -42,24 +42,24 @@
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="{{ route('notas')}}" class="nav-link px-2 text-white">Notas</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Galeria - ainda não elaborado</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Sobre - ainda não elaborado</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">Galeria</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">Sobre</a></li>
                 </ul>
 
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                {{-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
                     <input type="search" class="form-control form-control-dark text-white bg-dark" placeholder="Search..." aria-label="Search">
-                </form>
+                </form> --}}
 
                 <div class="text-end">
                     <hr>
-                        @if(session('usuario'))
-                            Olá {{session('usuario.nome')}}
-                            <a href="{{ route('usuario/logout') }}">
-                                <button type="button" class="btn btn-warning">Sair</button>
-                            </a>
-                        @else  
-                            <a href="{{ route('usuario/index')}}"><button type="button" class="btn btn-outline-light me-2">Login</button></a>
-                        @endif
+                    @if(session('usuario'))
+                    Olá {{session('usuario.nome')}}
+                    <a href="{{ route('usuario/logout') }}">
+                        <button type="button" class="btn btn-warning">Sair</button>
+                    </a>
+                    @else
+                    <a href="{{ route('usuario/index')}}"><button type="button" class="btn btn-outline-light me-2">Login</button></a>
+                    @endif
                     <hr>
                     {{-- <button type="button" class="btn btn-warning">Sign-up</button> --}}
                 </div>
@@ -67,14 +67,28 @@
         </div>
     </header>
 
+    @if(session('usuario'))
+
     <div class='container'>
-
-        @yield('corpo')
-
+        @yield('corpoNotas')
+        @yield('corpoVer')
+        @yield('corpoCriar')
+        @yield('corpoEditar')
     </div>
 
+    @else
+    <div class='container'>
+        @yield('corpo')
+    </div>
+
+    @endif
+
+
     <div class="container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+
+    {{-- https://willianjusten.com.br/como-criar-footer-fixo --}}
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top navbar-fixed-bottom">
+
             <p class="col-md-4 mb-0 text-muted">© Luane, T. 2022</p>
 
             <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
@@ -85,13 +99,16 @@
 
             <ul class="nav col-md-4 justify-content-end">
                 <li class="nav-item"><a href="{{ route('notas')}}" class="nav-link px-2 text-secondary">Notas</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Galeria - ainda não elaborado</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Sobre - ainda não elaborado</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Galeria</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Sobre</a></li>
             </ul>
         </footer>
+
     </div>
 
 </body>
+
+
 
 {{-- Bootstrap js --}}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
@@ -100,7 +117,7 @@
 
 <script>
     $('#summernote').summernote({
-        placeholder: 'Hello Bootstrap 4'
+        placeholder: 'Escreva suas ideias'
         , tabsize: 2
         , height: 100
     });

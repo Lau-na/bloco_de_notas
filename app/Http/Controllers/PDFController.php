@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 
 Use App\Models\Nota;
@@ -11,7 +10,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 class PDFController extends Controller
 {
-    public function geraPDF(){
+    public function geraPDF(Nota $note){
         // $nota = Nota::all();
         // // dd($nota);
         // $pdf = PDF::loadView('pdf');
@@ -21,7 +20,10 @@ class PDFController extends Controller
         // $pdf = App::make('dompdf.wrapper');
         // $pdf->loadHTML('');
 
-        $pdf = Pdf::loadView('pdf');
+        $notas = Nota::all();  
+        $pdf = Pdf::loadView('pdf', [
+            'note' => $notas,
+        ]);
         return $pdf->stream();
         // return $pdf->download();
 

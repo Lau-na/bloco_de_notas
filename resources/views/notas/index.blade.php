@@ -1,6 +1,8 @@
 @extends('layout')
-@section('titulo', 'Index de notas')
-@section('corpo') 
+
+
+@section('corpoNotas')
+    @section('titulo', 'Index de notas')
 
     <h1>Index de Notas</h1>
 
@@ -32,6 +34,10 @@
                     </td> --}}
 
                     <td>
+                        <a href="{{route('notas/pdf', $note->id)}}" class="btn btn-info edit-btn">PDF</a>
+                    </td>
+
+                    <td>
                         <a href="{{route('notas/editar', $note->id)}}" class="btn btn-info edit-btn">Editar</a>
                     </td>
 
@@ -49,8 +55,12 @@
         </table>
     </div>
 
-   
+@endsection
 
+@section('corpo')
+    @section('titulo', 'Welcome') {{--  Não deu certo --}}
 
+    <h1>Welcome</h1>
 
+    <p>Registre-se para continuar</p>
 @endsection

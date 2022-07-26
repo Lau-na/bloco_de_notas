@@ -1,6 +1,6 @@
 @extends('layout')
 @section('titulo', 'Editar nota')
-@section('corpo')
+@section('corpoEditar')
 
     <h1>Nota - Editar</h1>
 
