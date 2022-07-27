@@ -1,5 +1,7 @@
-
-<h1>Titulo: {{$note->titulo}}</h1><br>
+    
+    
+    {{-- <h1>Titulo: {{$note}}</h1><br> --}}
+    <h1>Titulo: {{$note->titulo}}</h1><br>
 
     <h2>Nível: {{$note->nivel->nome}}</h2><br>
 

@@ -20,14 +20,12 @@ class PDFController extends Controller
         // $pdf = App::make('dompdf.wrapper');
         // $pdf->loadHTML('');
 
-        $notas = Nota::all();  
-        $pdf = Pdf::loadView('pdf', [
-            'note' => $notas,
-        ]);
+        // $notas = Nota::all();  
+        $pdf = Pdf::loadView('pdf', ['note' => $note]);
         return $pdf->stream();
         // return $pdf->download();
 
     }
 
-    
+   
 }
