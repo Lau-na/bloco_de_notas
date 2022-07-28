@@ -1,8 +1,6 @@
 @extends('layout')
-
-
+@section('titulo', 'Notas')
 @section('corpoNotas')
-    @section('titulo', 'Index de notas')
 
     <h1>Index de Notas</h1>
 
