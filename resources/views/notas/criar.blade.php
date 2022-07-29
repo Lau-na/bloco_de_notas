@@ -16,22 +16,22 @@
 
 @endif --}}
 
-<form action="{{ route('notas/inserir')}}" method="post">
+<form class="container mt-5"  action="{{ route('notas/inserir')}}" method="post">
     @csrf
 
-    <p><input type="text" value="{{ old('titulo') }}" name="titulo" placeholder="Titulo"></p>
+    <div class="input-group mb-2 mr-sm-2">
+        <p><input type="text" value="{{ old('titulo') }}" name="titulo" placeholder="Titulo" cclass="form-control mb-2 mr-sm-2"></p>
+    </div>
+        <p>
+            <select name="nivel_id">
+                @foreach($nivs as $niv)
+                <option value="{{$niv->id}}">{{$niv->nome}}</option>
+                @endforeach
+            </select>
+        </p>
+        <p><textarea id="summernote" name="conteudo"></textarea></p>
 
-    <p>
-        <select name="nivel_id">
-            @foreach($nivs as $niv)
-            <option value="{{$niv->id}}">{{$niv->nome}}</option>
-            @endforeach
-        </select>
-    </p>
-
-    <p><textarea id="summernote" name="conteudo"></textarea></p>
-
-    <p><input type="submit" value="Criar"></p>
+    <p><input type="submit" value="Criar" class="btn btn-primary mb-2"></p>
     
 </form>
 

@@ -1,13 +1,11 @@
 @extends('layout')
 @section('titulo', 'Ver Nota')
-@section('corpover')
+@section('corpoVer')
     
-    <h1>Notas - Ver</h1>
-
-    <h2>{{$note->titulo}}</h2>
-
-    <p>{{$note->nivel->nome}}</p>
-
-    <p>{!!$note->conteudo!!}</p>
+    <div class="container mt-5">
+        <h2>{{$note->titulo}}</h2>
+        <p>{{$note->nivel->nome}}</p>
+        <p class="border border-dark rounded p-3">{!!$note->conteudo!!}</p>
+    </div>
 
 @endsection

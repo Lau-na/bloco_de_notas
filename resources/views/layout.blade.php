@@ -43,7 +43,7 @@
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="{{ route('notas')}}" class="nav-link px-2 text-white">Notas</a></li>
                     <li><a href="#" class="nav-link px-2 text-white">Galeria</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Sobre</a></li>
+                    <li><a href="{{ route('sobre')}}" class="nav-link px-2 text-white">Sobre</a></li>
                 </ul>
 
                 {{-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -74,6 +74,7 @@
         @yield('corpoVer')
         @yield('corpoCriar')
         @yield('corpoEditar')
+        @yield('corpoSobre')
     </div>
 
     @else
@@ -83,28 +84,20 @@
 
     @endif
 
-
-    <div class="container">
-
-    {{-- https://willianjusten.com.br/como-criar-footer-fixo --}}
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top navbar-fixed-bottom">
-
+    
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top navbr-fixed-bottom">
             <p class="col-md-4 mb-0 text-muted">© Luane, T. 2022</p>
-
             <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
                 <svg class="bi me-2" width="40" height="32">
                     <use xlink:href="#bootstrap"></use>
                 </svg>
             </a>
-
             <ul class="nav col-md-4 justify-content-end">
                 <li class="nav-item"><a href="{{ route('notas')}}" class="nav-link px-2 text-secondary">Notas</a></li>
                 <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Galeria</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Sobre</a></li>
+                <li class="nav-item"><a href="{{ route('sobre')}}" class="nav-link px-2 text-muted">Sobre</a></li>
             </ul>
         </footer>
-
-    </div>
 
 </body>
 
@@ -113,13 +106,12 @@
 {{-- Bootstrap js --}}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
-{{-- Summernote css/js --}}
-
 <script>
     $('#summernote').summernote({
         placeholder: 'Escreva suas ideias'
         , tabsize: 2
-        , height: 100
+        , height: 500,
+
     });
 
 </script>

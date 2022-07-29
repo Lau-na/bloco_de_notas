@@ -16,7 +16,7 @@
         
     @endif --}}
 
-    <form action="{{ route('notas/editar', $note->id)}}" method="post">
+    <form class="container mt-5"  action="{{ route('notas/editar', $note->id)}}" method="post">
         @csrf
         @method('put')
 
@@ -36,7 +36,7 @@
 
         <p><textarea id="summernote" name="conteudo" cols="50" rows="10">{{ old('conteudo') ?: $note->conteudo }}</textarea></p>
 
-        <p><input type="submit" value="Gravar"></p>
+        <p><input type="submit" value="Gravar" class="btn btn-primary mb-2"></p>
     </form>
 
 @endsection

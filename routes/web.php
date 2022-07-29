@@ -44,4 +44,7 @@ Route::get('/logout', [UsuariosController::class, 'logout'])->name('usuario/logo
 Route::get('notas/pdf/{note}', [PDFController::class, 'geraPDF'])->name('notas/pdf');
 
 
-Route::get('/galeria', [NotasController::class, 'index'])->name('galeria');
+// Route::get('/galeria', [NotasController::class, 'index'])->name('galeria');
+
+Route::get('/sobre', function(){
+    return view('sobre');})->name('sobre');

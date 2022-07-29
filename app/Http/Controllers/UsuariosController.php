@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class UsuariosController extends Controller
 {
     public function index(){
-        return view('usuarios/index');
+        return view('usuarios/login');
     }
 
     public function login(Request $form){
